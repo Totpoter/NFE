@@ -1,0 +1,167 @@
+@import url('https://fonts.cdnfonts.com/css/roboto');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+body {
+    background-color: lightgray;
+}
+
+nav {
+    position: relative;
+    z-index: 99;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+    color: #FFF;
+    padding: 2rem 1.5rem;
+}
+
+nav h1 {
+    position: absolute;
+    left: 2%;
+    letter-spacing: 5px;
+    padding: 0.5rem 1rem;
+    padding-right: calc(1rem - 5px); /* Since letter-spacing is set to 5px, the last letter of the h1 has extra 5px of padding, this sets it to be equal to everything else */
+    border: 3px solid white;
+}
+
+nav h1:hover {
+    color: crimson;
+}
+
+.menu {
+    display: none;
+    align-items: center;
+    margin: 0 -1rem; /* Equal spacing on the left and the right */
+}
+
+.menu a {
+    margin: 0 3rem;
+    color: white;
+    text-decoration: none;
+}
+
+.menu a:hover {
+    color: crimson;
+}
+
+.icon {
+    appearance: none;
+    outline: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: #FFF;
+
+    position: absolute;
+}
+
+.icon:hover {
+    color: crimson;
+}
+
+.cart {
+    right: 10%;
+}
+
+.account {
+    right: 7%;
+}
+
+.language {
+    right: 4%;
+}
+
+.burger {
+    appearance: none;
+    outline: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: #FFF;
+
+    position: absolute;
+    right: 2%;
+    display: block;
+    width: 2rem;
+    height: 2rem;
+}
+
+.burger span {
+    color: white;
+    font-size: 2rem;
+}
+
+.mobile-menu {
+    position: fixed;
+    top: 0; /* This together with position fixed sets it to the top of the page without being able to move */
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 98;
+
+    padding-top: 6rem; /* Brings it beneath the logo */
+    opacity: 0;
+    transform: translateY(-100%); /* Brings it off screen */
+    background-color: black;
+    color: #FFF;
+    transition: 0.3s;
+}
+
+.account-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20%;
+    height: 30%;
+    z-index: 98;
+
+    padding-top: 6rem;
+    opacity: 0;
+    transform: translateY(-100%);
+    background-color: black;
+    color: #FFF;
+    transition: 0.3s;
+}
+
+.mobile-menu.is-open, .account-menu.is-open {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.mobile-menu a {
+    display: block;
+    padding: 1rem;
+    color: #FFF;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.25rem;
+    transition: 0.3s;
+}
+
+.mobile-menu a:hover {
+    color: crimson;
+    background-color: #FFF;
+}
+
+@media (min-width: 768px) {
+    .mobile-menu, .burger {
+        display: none;
+    }
+
+    .menu  {
+        display: flex;
+    }
+}
+
+@media (max-width: 768px) {
+    .account, .language, .cart {
+        display: none;
+    }
+}
