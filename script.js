@@ -2,6 +2,7 @@ const burger = document.querySelector(".burger");
 const cart = document.querySelector(".cart");
 const account = document.querySelector(".account");
 const language = document.querySelector(".language");
+const logo = document.querySelector(".logo");
 
 const cart_icon = cart.querySelector("span");
 const account_icon = account.querySelector("span");
@@ -21,4 +22,8 @@ burger.addEventListener("click", () => {
 
 account.addEventListener("click", () => {
     account_menu.classList.toggle("is-open");
+})
+
+logo.addEventListener("click", () => {
+    window.location.href = "index.html";
 })

@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -moz-box-sizing: border-box;
     font-family: "Roboto", sans-serif;
 }
 
@@ -29,6 +30,7 @@ nav h1 {
     padding: 0.5rem 1rem;
     padding-right: calc(1rem - 5px); /* Since letter-spacing is set to 5px, the last letter of the h1 has extra 5px of padding, this sets it to be equal to everything else */
     border: 3px solid white;
+    cursor: pointer;
 }
 
 nav h1:hover {
@@ -45,10 +47,16 @@ nav h1:hover {
     margin: 0 3rem;
     color: white;
     text-decoration: none;
+    text-align: center;
 }
 
 .menu a:hover {
     color: crimson;
+}
+
+.active {
+    margin-top: 1px !important;
+    border-bottom: 1px solid crimson;
 }
 
 .icon {
@@ -113,6 +121,10 @@ nav h1:hover {
     background-color: black;
     color: #FFF;
     transition: 0.3s;
+}
+
+.mobile-active {
+    outline: 1px solid crimson;
 }
 
 .account-menu {
@@ -192,4 +204,14 @@ nav h1:hover {
     .account, .language, .cart {
         display: none;
     }
+}
+
+/* Index */
+
+.main {
+    width: 100vh;
+    height: 100vh;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
 }
